@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto create(@NonNull UserDto dto) {
+    public UserDto create(@NonNull final UserDto dto) {
         final String email = dto.getEmail();
         if (repository.existsByEmail(email)) {
             throw new ConflictException("Record user by email already exists", "email", email);
@@ -43,17 +43,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getById(long id) {
+    public UserDto getById(@NonNull final long id) {
         return null;
     }
 
     @Override
-    public UserDto delete(UserDto dto) {
+    public UserDto delete(@NonNull final UserDto dto) {
         return null;
     }
 
     @Override
-    public UserDto update(long id, UserDto dto) {
+    public UserDto update(@NonNull long id,@NonNull final UserDto dto) {
         return null;
     }
 
@@ -68,17 +68,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserDto> findByEmail(String email) {
+    public Optional<UserDto> findByEmail(@NonNull final String email) {
         return Optional.empty();
     }
 
     @Override
-    public Optional<UserDto> findByUsername(String username) {
+    public Optional<UserDto> findByUsername(@NonNull final String username) {
         return Optional.empty();
     }
 
     @Override
-    public List<UserDto> findByIdIn(List<Long> userIds) {
+    public List<UserDto> findByIdIn(@NonNull final List<Long> userIds) {
         return null;
     }
 }
